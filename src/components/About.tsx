@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const About = () => {
   return (
-    <section className="py-12">
+    <section id="about" className="py-12">
       <div className="container mx-auto px-4">
         <Card className="shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)] transition-shadow">
           <CardContent className="pt-6">

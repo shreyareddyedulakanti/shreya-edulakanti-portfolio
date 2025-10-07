@@ -26,7 +26,7 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section className="py-12 bg-muted/30">
+    <section id="skills" className="py-12 bg-muted/30">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-8">Skills</h2>
         
