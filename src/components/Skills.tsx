@@ -5,14 +5,7 @@ import {
   Server, 
   Database, 
   Cloud, 
-  Wrench,
-  Layers,
-  FileCode,
-  Braces,
-  Terminal,
-  Container,
-  GitBranch,
-  CheckCircle2
+  Wrench
 } from "lucide-react";
 
 const skillCategories = [
@@ -20,53 +13,53 @@ const skillCategories = [
     category: "Frontend",
     icon: Code2,
     skills: [
-      { name: "React", icon: Layers },
-      { name: "Angular", icon: Braces },
-      { name: "TypeScript", icon: FileCode },
-      { name: "Tailwind CSS", icon: Code2 },
-      { name: "JavaScript", icon: FileCode }
+      { name: "React", icon: "⚛️" },
+      { name: "Angular", icon: "🅰️" },
+      { name: "TypeScript", icon: "📘" },
+      { name: "Tailwind CSS", icon: "🎨" },
+      { name: "JavaScript", icon: "🟨" }
     ]
   },
   {
     category: "Backend",
     icon: Server,
     skills: [
-      { name: "Node.js", icon: Terminal },
-      { name: "Express.js", icon: Server },
-      { name: "RESTful APIs", icon: Braces },
-      { name: "PHP", icon: Code2 }
+      { name: "Node.js", icon: "🟢" },
+      { name: "Express.js", icon: "⚡" },
+      { name: "RESTful APIs", icon: "🔌" },
+      { name: "PHP", icon: "🐘" }
     ]
   },
   {
     category: "Database",
     icon: Database,
     skills: [
-      { name: "MySQL", icon: Database },
-      { name: "PostgreSQL", icon: Database },
-      { name: "MongoDB", icon: Database },
-      { name: "Oracle", icon: Database }
+      { name: "MySQL", icon: "🐬" },
+      { name: "PostgreSQL", icon: "🐘" },
+      { name: "MongoDB", icon: "🍃" },
+      { name: "Oracle", icon: "🔴" }
     ]
   },
   {
     category: "Cloud & DevOps",
     icon: Cloud,
     skills: [
-      { name: "AWS", icon: Cloud },
-      { name: "Docker", icon: Container },
-      { name: "Jenkins", icon: Wrench },
-      { name: "CI/CD", icon: GitBranch },
-      { name: "Kubernetes", icon: Container }
+      { name: "AWS", icon: "☁️" },
+      { name: "Docker", icon: "🐳" },
+      { name: "Jenkins", icon: "🔧" },
+      { name: "CI/CD", icon: "♻️" },
+      { name: "Kubernetes", icon: "⚓" }
     ]
   },
   {
     category: "Tools & Methodologies",
     icon: Wrench,
     skills: [
-      { name: "Git", icon: GitBranch },
-      { name: "Agile/Scrum", icon: CheckCircle2 },
-      { name: "Jest", icon: CheckCircle2 },
-      { name: "Cypress", icon: CheckCircle2 },
-      { name: "WCAG", icon: CheckCircle2 }
+      { name: "Git", icon: "📦" },
+      { name: "Agile/Scrum", icon: "📊" },
+      { name: "Jest", icon: "🃏" },
+      { name: "Cypress", icon: "🌲" },
+      { name: "WCAG", icon: "♿" }
     ]
   }
 ];
@@ -81,24 +74,19 @@ const Skills = () => {
           {skillCategories.map((category) => {
             const CategoryIcon = category.icon;
             return (
-              <Card key={category.category} className="shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)] transition-all hover-scale">
+              <Card key={category.category} className="shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)] transition-shadow">
                 <CardContent className="pt-6">
                   <div className="flex items-center gap-2 mb-4">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <CategoryIcon className="w-5 h-5 text-primary" />
-                    </div>
+                    <CategoryIcon className="w-5 h-5 text-primary" />
                     <h3 className="font-semibold text-lg text-primary">{category.category}</h3>
                   </div>
-                  <div className="space-y-2">
-                    {category.skills.map((skill) => {
-                      const SkillIcon = skill.icon;
-                      return (
-                        <div key={skill.name} className="flex items-center gap-2 p-2 rounded-md hover:bg-secondary/50 transition-colors">
-                          <SkillIcon className="w-4 h-4 text-primary/70" />
-                          <span className="text-sm font-medium">{skill.name}</span>
-                        </div>
-                      );
-                    })}
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill) => (
+                      <Badge key={skill.name} variant="secondary" className="px-3 py-1.5 flex items-center gap-1.5">
+                        <span className="text-base">{skill.icon}</span>
+                        <span>{skill.name}</span>
+                      </Badge>
+                    ))}
                   </div>
                 </CardContent>
               </Card>
