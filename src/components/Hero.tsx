@@ -1,4 +1,4 @@
-import { Mail, Linkedin, MapPin, Download, Sparkles } from "lucide-react";
+import { Mail, Linkedin, MapPin, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -17,9 +17,6 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-full blur-xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
             <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-primary via-primary/90 to-accent flex items-center justify-center text-white text-6xl md:text-8xl font-bold shadow-2xl border-4 border-background">
               WD
-            </div>
-            <div className="absolute -bottom-2 -right-2 bg-primary text-white p-3 rounded-full shadow-lg animate-bounce">
-              <Sparkles className="w-6 h-6" />
             </div>
           </div>
           
@@ -63,13 +60,6 @@ const Hero = () => {
                 Download CV
               </Button>
             </div>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden lg:block">
-          <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex items-start justify-center p-2">
-            <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></div>
           </div>
         </div>
       </div>
