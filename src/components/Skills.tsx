@@ -20,7 +20,7 @@ import {
   SiPostgresql,
   SiMongodb,
   SiOracle,
-  SiAwsamplify,
+  SiAmazonwebservices,
   SiDocker,
   SiJenkins,
   SiKubernetes,
@@ -66,7 +66,7 @@ const skillCategories = [
     category: "Cloud & DevOps",
     icon: Cloud,
     skills: [
-      { name: "AWS", icon: SiAwsamplify },
+      { name: "AWS", icon: SiAmazonwebservices },
       { name: "Docker", icon: SiDocker },
       { name: "Jenkins", icon: SiJenkins },
       { name: "CI/CD", icon: Settings },
