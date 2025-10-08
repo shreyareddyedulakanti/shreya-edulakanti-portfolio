@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Code2, Calendar } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const projects = [
   {
@@ -27,14 +28,24 @@ const projects = [
 ];
 
 const Projects = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  
   return (
-    <section id="projects" className="py-12">
+    <section id="projects" className="py-12" ref={ref as any}>
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8">Featured Projects</h2>
+        <h2 className={`text-3xl font-bold mb-8 transition-all duration-700 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
+          Featured Projects
+        </h2>
         
         <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
-            <Card key={index} className="shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)] transition-shadow">
+            <Card 
+              key={index} 
+              className={`shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)] transition-all duration-500 hover:-translate-y-1 ${
+                isVisible ? 'animate-slide-up' : 'opacity-0'
+              }`}
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
               <CardContent className="pt-6">
                 <div className="flex items-start gap-3 mb-4">
                   <Code2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />

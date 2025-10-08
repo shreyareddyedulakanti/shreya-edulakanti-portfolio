@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Briefcase, Calendar } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const experiences = [
   {
@@ -55,14 +56,24 @@ const experiences = [
 ];
 
 const Experience = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  
   return (
-    <section id="experience" className="py-12">
+    <section id="experience" className="py-12" ref={ref as any}>
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8">Experience</h2>
+        <h2 className={`text-3xl font-bold mb-8 transition-all duration-700 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
+          Experience
+        </h2>
         
         <div className="space-y-6">
           {experiences.map((exp, index) => (
-            <Card key={index} className="shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)] transition-shadow">
+            <Card 
+              key={index} 
+              className={`shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)] transition-all duration-500 hover:-translate-y-1 ${
+                isVisible ? 'animate-slide-in-left' : 'opacity-0'
+              }`}
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
               <CardContent className="pt-6">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                   <div>

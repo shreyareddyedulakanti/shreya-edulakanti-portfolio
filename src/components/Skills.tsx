@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { 
   Code2, 
   Server, 
@@ -87,26 +88,43 @@ const skillCategories = [
 ];
 
 const Skills = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  
   return (
-    <section id="skills" className="py-12 bg-muted/30">
+    <section id="skills" className="py-12 bg-muted/30" ref={ref as any}>
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8">Skills</h2>
+        <h2 className={`text-3xl font-bold mb-8 transition-all duration-700 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
+          Skills
+        </h2>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillCategories.map((category) => {
+          {skillCategories.map((category, index) => {
             const CategoryIcon = category.icon;
             return (
-              <Card key={category.category} className="shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)] transition-shadow">
+              <Card 
+                key={category.category} 
+                className={`shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)] transition-all duration-500 hover:-translate-y-1 ${
+                  isVisible ? 'animate-scale-in' : 'opacity-0'
+                }`}
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
                 <CardContent className="pt-6">
                   <div className="flex items-center gap-2 mb-4">
                     <CategoryIcon className="w-5 h-5 text-primary" />
                     <h3 className="font-semibold text-lg text-primary">{category.category}</h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill) => {
+                    {category.skills.map((skill, skillIndex) => {
                       const SkillIcon = skill.icon;
                       return (
-                        <Badge key={skill.name} variant="secondary" className="px-3 py-1.5 flex items-center gap-1.5">
+                        <Badge 
+                          key={skill.name} 
+                          variant="secondary" 
+                          className={`px-3 py-1.5 flex items-center gap-1.5 transition-all duration-300 hover:scale-110 hover:bg-primary hover:text-primary-foreground ${
+                            isVisible ? 'animate-fade-in' : 'opacity-0'
+                          }`}
+                          style={{ animationDelay: `${(index * 100) + (skillIndex * 50)}ms` }}
+                        >
                           <SkillIcon className="w-4 h-4" />
                           <span>{skill.name}</span>
                         </Badge>
