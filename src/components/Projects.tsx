@@ -4,6 +4,11 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const projects = [
   {
+    title: "Interactive Portfolio Website",
+    description: "Built a modern, responsive portfolio website with smooth scroll animations and dark mode support. Features a clean design system with reusable components and optimized performance.",
+    skills: ["React", "TypeScript", "Tailwind CSS", "Vite", "Lucide Icons"]
+  },
+  {
     title: "Student Survey Full Stack Application",
     description: "Designed and deployed a scalable survey platform on AWS using React and Spring Boot. Orchestrated backend services in Dockerized Kubernetes clusters and implemented optimized REST APIs with AWS RDS.",
     skills: ["AWS", "Spring Boot", "React", "PostgreSQL", "Docker"]
