@@ -12,14 +12,35 @@ const titles = [
 
 const Hero = () => {
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTitleIndex((prev) => (prev + 1) % titles.length);
-    }, 2500); // Change every 2.5 seconds
+    const currentTitle = titles[currentTitleIndex];
+    
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        // Typing
+        if (displayedText.length < currentTitle.length) {
+          setDisplayedText(currentTitle.slice(0, displayedText.length + 1));
+        } else {
+          // Pause before deleting
+          setTimeout(() => setIsDeleting(true), 1500);
+        }
+      } else {
+        // Deleting
+        if (displayedText.length > 0) {
+          setDisplayedText(displayedText.slice(0, -1));
+        } else {
+          // Move to next title
+          setIsDeleting(false);
+          setCurrentTitleIndex((prev) => (prev + 1) % titles.length);
+        }
+      }
+    }, isDeleting ? 50 : 100); // Faster deletion, slower typing
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearTimeout(timeout);
+  }, [displayedText, isDeleting, currentTitleIndex]);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -59,8 +80,9 @@ const Hero = () => {
                   Shreya Edulakanti
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground font-medium min-h-[2rem] transition-all duration-500">
-                {titles[currentTitleIndex]}
+              <p className="text-xl md:text-2xl text-muted-foreground font-medium min-h-[2rem] flex items-center justify-center gap-1">
+                {displayedText}
+                <span className="inline-block w-0.5 h-6 bg-primary animate-pulse"></span>
               </p>
             </div>
 
