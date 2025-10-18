@@ -1,7 +1,26 @@
 import { Linkedin, Github, Mail, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
+
+const titles = [
+  "Web Developer",
+  "Full-Stack Developer",
+  "Front-End Developer",
+  "AI Enthusiast",
+  "Curious Coder"
+];
 
 const Hero = () => {
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTitleIndex((prev) => (prev + 1) % titles.length);
+    }, 2500); // Change every 2.5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Gradient Background */}
@@ -40,8 +59,8 @@ const Hero = () => {
                   Shreya Edulakanti
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground font-medium">
-                Web Developer
+              <p className="text-xl md:text-2xl text-muted-foreground font-medium min-h-[2rem] transition-all duration-500">
+                {titles[currentTitleIndex]}
               </p>
             </div>
 
