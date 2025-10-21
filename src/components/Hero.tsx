@@ -139,7 +139,7 @@ const Hero = () => {
             <div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
                 <span className="block text-foreground mb-2">Hi, I'm</span>
-                <span className="block bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent">
+                <span className="block text-[hsl(var(--hero-accent))]">
                   Shreya Edulakanti
                 </span>
               </h1>
@@ -174,9 +174,9 @@ const Hero = () => {
           <div className="flex justify-center lg:justify-end">
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
-              <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-primary via-primary/90 to-accent flex items-center justify-center shadow-2xl border-4 border-background overflow-hidden group-hover:scale-105 transition-transform duration-300">
+              <div className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full bg-gradient-to-br from-primary via-primary/90 to-accent flex items-center justify-center shadow-2xl border-4 border-background overflow-hidden group-hover:scale-105 transition-transform duration-300">
                 {/* Replace the content below with an actual image: <img src="your-image-url" alt="Shreya Edulakanti" className="w-full h-full object-cover" /> */}
-                <div className="text-white text-7xl md:text-8xl lg:text-9xl font-bold">SE</div>
+                <div className="text-white text-5xl md:text-6xl lg:text-7xl font-bold">SE</div>
               </div>
             </div>
           </div>
