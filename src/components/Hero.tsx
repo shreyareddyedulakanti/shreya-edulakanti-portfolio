@@ -133,8 +133,19 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center animate-fade-in">
-          {/* Left Column - Text Content */}
-          <div className="space-y-8 text-center lg:text-left">
+          {/* Right Column - Profile Image (First on mobile) */}
+          <div className="flex justify-center lg:justify-end lg:order-2">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
+              <div className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full bg-gradient-to-br from-primary via-primary/90 to-accent flex items-center justify-center shadow-2xl border-4 border-background overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                {/* Replace the content below with an actual image: <img src="your-image-url" alt="Shreya Edulakanti" className="w-full h-full object-cover" /> */}
+                <div className="text-white text-5xl md:text-6xl lg:text-7xl font-bold">SE</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Left Column - Text Content (Second on mobile) */}
+          <div className="space-y-8 text-center lg:text-left lg:order-1">
             {/* Main Heading */}
             <div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
@@ -167,17 +178,6 @@ const Hero = () => {
                 <Mail className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                 Email
               </Button>
-            </div>
-          </div>
-
-          {/* Right Column - Profile Image */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
-              <div className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full bg-gradient-to-br from-primary via-primary/90 to-accent flex items-center justify-center shadow-2xl border-4 border-background overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                {/* Replace the content below with an actual image: <img src="your-image-url" alt="Shreya Edulakanti" className="w-full h-full object-cover" /> */}
-                <div className="text-white text-5xl md:text-6xl lg:text-7xl font-bold">SE</div>
-              </div>
             </div>
           </div>
         </div>
