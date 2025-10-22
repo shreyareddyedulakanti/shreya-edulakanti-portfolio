@@ -17,7 +17,7 @@ const Index = () => {
       <Education />
       <Projects />
       
-      <footer className="bg-card border-t py-8 mt-12">
+      <footer className="bg-card border-t py-8 mt-12" role="contentinfo">
         <div className="container mx-auto px-4 text-center text-muted-foreground">
           <p>© 2025 Web Developer Portfolio. Built with React & TypeScript.</p>
         </div>

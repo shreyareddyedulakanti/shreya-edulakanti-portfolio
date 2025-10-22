@@ -86,12 +86,16 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
+    <section 
+      id="main-content" 
+      className="relative min-h-screen flex items-center justify-center overflow-hidden py-20"
+      aria-label="Hero section"
+    >
       {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-accent/10"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-accent/10" aria-hidden="true"></div>
       
       {/* Animated Tech Icons Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20" aria-hidden="true">
         {techIcons.map((tech, index) => {
           const TechIcon = tech.Icon;
           const positions = [
@@ -124,6 +128,7 @@ const Hero = () => {
                 animationDelay: `${index * 0.3}s`,
                 animationDuration: `${3 + (index % 3)}s`
               }}
+              aria-hidden="true"
             >
               <TechIcon className={`w-8 h-8 md:w-12 md:h-12 ${tech.color}`} />
             </div>
@@ -136,10 +141,10 @@ const Hero = () => {
           {/* Right Column - Profile Image (First on mobile) */}
           <div className="flex justify-center lg:justify-end lg:order-2">
             <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity" aria-hidden="true"></div>
               <div className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full bg-gradient-to-br from-primary via-primary/90 to-accent flex items-center justify-center shadow-2xl border-4 border-background overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                {/* Replace the content below with an actual image: <img src="your-image-url" alt="Shreya Edulakanti" className="w-full h-full object-cover" /> */}
-                <div className="text-white text-5xl md:text-6xl lg:text-7xl font-bold">SE</div>
+                {/* Replace the content below with an actual image: <img src="your-image-url" alt="Shreya Edulakanti - Web Developer" className="w-full h-full object-cover" /> */}
+                <div className="text-white text-5xl md:text-6xl lg:text-7xl font-bold" role="img" aria-label="Shreya Edulakanti initials">SE</div>
               </div>
             </div>
           </div>
@@ -154,29 +159,57 @@ const Hero = () => {
                   Shreya Edulakanti
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground font-medium min-h-[2rem] flex items-center justify-center lg:justify-start gap-1">
+              <p className="text-xl md:text-2xl text-muted-foreground font-medium min-h-[2rem] flex items-center justify-center lg:justify-start gap-1" aria-live="polite" aria-atomic="true">
                 {displayedText}
-                <span className="inline-block w-0.5 h-6 bg-primary animate-pulse"></span>
+                <span className="inline-block w-0.5 h-6 bg-primary animate-pulse" aria-hidden="true"></span>
               </p>
             </div>
 
             {/* Social Media Links */}
-            <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-              <Button size="lg" variant="outline" className="shadow-lg hover:shadow-xl transition-all hover-scale group">
-                <Linkedin className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
-                LinkedIn
+            <div className="flex flex-wrap gap-4 justify-center lg:justify-start" role="group" aria-label="Social media links">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="shadow-lg hover:shadow-xl transition-all hover-scale group"
+                asChild
+              >
+                <a href="#" aria-label="Connect on LinkedIn">
+                  <Linkedin className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" aria-hidden="true" />
+                  LinkedIn
+                </a>
               </Button>
-              <Button size="lg" variant="outline" className="shadow-lg hover:shadow-xl transition-all hover-scale group">
-                <Github className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                GitHub
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="shadow-lg hover:shadow-xl transition-all hover-scale group"
+                asChild
+              >
+                <a href="#" aria-label="View GitHub profile">
+                  <Github className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" aria-hidden="true" />
+                  GitHub
+                </a>
               </Button>
-              <Button size="lg" variant="outline" className="shadow-lg hover:shadow-xl transition-all hover-scale group">
-                <Twitter className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
-                Twitter
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="shadow-lg hover:shadow-xl transition-all hover-scale group"
+                asChild
+              >
+                <a href="#" aria-label="Follow on Twitter">
+                  <Twitter className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" aria-hidden="true" />
+                  Twitter
+                </a>
               </Button>
-              <Button size="lg" variant="outline" className="shadow-lg hover:shadow-xl transition-all hover-scale group">
-                <Mail className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                Email
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="shadow-lg hover:shadow-xl transition-all hover-scale group"
+                asChild
+              >
+                <a href="mailto:your-email@example.com" aria-label="Send an email">
+                  <Mail className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" aria-hidden="true" />
+                  Email
+                </a>
               </Button>
             </div>
           </div>

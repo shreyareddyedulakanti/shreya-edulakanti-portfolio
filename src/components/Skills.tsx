@@ -91,9 +91,9 @@ const Skills = () => {
   const { ref, isVisible } = useScrollAnimation();
   
   return (
-    <section id="skills" className="py-12 bg-muted/30" ref={ref as any}>
+    <section id="skills" className="py-12 bg-muted/30" ref={ref as any} aria-labelledby="skills-heading">
       <div className="container mx-auto px-4">
-        <h2 className={`text-3xl font-bold mb-8 transition-all duration-700 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
+        <h2 id="skills-heading" className={`text-3xl font-bold mb-8 transition-all duration-700 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
           Skills
         </h2>
         
@@ -107,13 +107,15 @@ const Skills = () => {
                   isVisible ? 'animate-scale-in' : 'opacity-0'
                 }`}
                 style={{ animationDelay: `${index * 100}ms` }}
+                role="region"
+                aria-labelledby={`skills-category-${index}`}
               >
                 <CardContent className="pt-6">
                   <div className="flex items-center gap-2 mb-4">
-                    <CategoryIcon className="w-5 h-5 text-primary" />
-                    <h3 className="font-semibold text-lg text-primary">{category.category}</h3>
+                    <CategoryIcon className="w-5 h-5 text-primary" aria-hidden="true" />
+                    <h3 id={`skills-category-${index}`} className="font-semibold text-lg text-primary">{category.category}</h3>
                   </div>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2" role="list" aria-label={`${category.category} skills`}>
                     {category.skills.map((skill, skillIndex) => {
                       const SkillIcon = skill.icon;
                       return (
@@ -124,8 +126,9 @@ const Skills = () => {
                             isVisible ? 'animate-fade-in' : 'opacity-0'
                           }`}
                           style={{ animationDelay: `${(index * 100) + (skillIndex * 50)}ms` }}
+                          role="listitem"
                         >
-                          <SkillIcon className="w-4 h-4" />
+                          <SkillIcon className="w-4 h-4" aria-hidden="true" />
                           <span>{skill.name}</span>
                         </Badge>
                       );

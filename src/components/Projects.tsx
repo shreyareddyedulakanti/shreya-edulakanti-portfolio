@@ -30,9 +30,9 @@ const Projects = () => {
   const { ref, isVisible } = useScrollAnimation();
   
   return (
-    <section id="projects" className="py-12" ref={ref as any}>
+    <section id="projects" className="py-12" ref={ref as any} aria-labelledby="projects-heading">
       <div className="container mx-auto px-4">
-        <h2 className={`text-3xl font-bold mb-8 transition-all duration-700 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
+        <h2 id="projects-heading" className={`text-3xl font-bold mb-8 transition-all duration-700 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
           Featured Projects
         </h2>
         
@@ -44,13 +44,15 @@ const Projects = () => {
                 isVisible ? 'animate-slide-up' : 'opacity-0'
               }`}
               style={{ animationDelay: `${index * 150}ms` }}
+              role="article"
+              aria-labelledby={`project-title-${index}`}
             >
               <CardContent className="pt-6">
                 <div className="flex items-start gap-3 mb-4">
-                  <Code2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                  <Code2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
                   <div className="flex-1">
                     <div className="flex items-start justify-between gap-2 mb-3">
-                      <h3 className="text-xl font-semibold">{project.title}</h3>
+                      <h3 id={`project-title-${index}`} className="text-xl font-semibold">{project.title}</h3>
                       <div className="flex gap-2">
                         {project.githubUrl && (
                           <a 
@@ -80,9 +82,9 @@ const Projects = () => {
                   </div>
                 </div>
                 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2" role="list" aria-label={`Technologies used in ${project.title}`}>
                   {project.skills.map((skill) => (
-                    <span key={skill} className="px-2.5 py-1 bg-secondary text-secondary-foreground rounded-full text-xs font-medium">
+                    <span key={skill} className="px-2.5 py-1 bg-secondary text-secondary-foreground rounded-full text-xs font-medium" role="listitem">
                       {skill}
                     </span>
                   ))}

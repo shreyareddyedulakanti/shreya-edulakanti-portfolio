@@ -59,9 +59,9 @@ const Experience = () => {
   const { ref, isVisible } = useScrollAnimation();
   
   return (
-    <section id="experience" className="py-12" ref={ref as any}>
+    <section id="experience" className="py-12" ref={ref as any} aria-labelledby="experience-heading">
       <div className="container mx-auto px-4">
-        <h2 className={`text-3xl font-bold mb-8 transition-all duration-700 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
+        <h2 id="experience-heading" className={`text-3xl font-bold mb-8 transition-all duration-700 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
           Experience
         </h2>
         
@@ -73,24 +73,26 @@ const Experience = () => {
                 isVisible ? 'animate-slide-in-left' : 'opacity-0'
               }`}
               style={{ animationDelay: `${index * 100}ms` }}
+              role="article"
+              aria-labelledby={`experience-title-${index}`}
             >
               <CardContent className="pt-6">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                   <div>
                     <div className="flex items-center gap-2 mb-2">
-                      <Briefcase className="w-5 h-5 text-primary" />
-                      <h3 className="text-xl font-semibold">{exp.title}</h3>
+                      <Briefcase className="w-5 h-5 text-primary" aria-hidden="true" />
+                      <h3 id={`experience-title-${index}`} className="text-xl font-semibold">{exp.title}</h3>
                     </div>
                     <p className="text-lg font-medium text-primary">{exp.company}</p>
                     <p className="text-sm text-muted-foreground">{exp.location}</p>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground mt-2 md:mt-0">
-                    <Calendar className="w-4 h-4" />
-                    <span>{exp.period}</span>
+                    <Calendar className="w-4 h-4" aria-hidden="true" />
+                    <time dateTime={exp.period}>{exp.period}</time>
                   </div>
                 </div>
                 
-                <ul className="space-y-2 mb-4">
+                <ul className="space-y-2 mb-4" aria-label={`Key achievements at ${exp.company}`}>
                   {exp.highlights.map((highlight, idx) => (
                     <li key={idx} className="text-muted-foreground flex gap-2">
                       <span className="text-primary mt-1.5">•</span>
