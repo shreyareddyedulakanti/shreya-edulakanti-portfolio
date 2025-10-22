@@ -62,7 +62,7 @@ const Experience = () => {
     <section id="experience" className="py-12" ref={ref as any} aria-labelledby="experience-heading">
       <div className="container mx-auto px-4">
         <h2 id="experience-heading" className={`text-3xl font-bold mb-8 transition-all duration-700 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
-          Experience
+          Professional Experience
         </h2>
         
         <div className="space-y-6">

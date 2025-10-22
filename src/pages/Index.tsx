@@ -8,7 +8,7 @@ import Projects from "@/components/Projects";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <main className="min-h-screen">
       <Navigation />
       <Hero />
       <About />
@@ -19,10 +19,10 @@ const Index = () => {
       
       <footer className="bg-card border-t py-8 mt-12" role="contentinfo">
         <div className="container mx-auto px-4 text-center text-muted-foreground">
-          <p>© 2025 Web Developer Portfolio. Built with React & TypeScript.</p>
+          <p>© 2025 Shreya Edulakanti. Full Stack Web Developer Portfolio. Built with React & TypeScript.</p>
         </div>
       </footer>
-    </div>
+    </main>
   );
 };
 
