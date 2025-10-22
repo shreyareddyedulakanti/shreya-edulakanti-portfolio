@@ -74,7 +74,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 animate-fade-in">
+          <div className="md:hidden py-4 bg-card/95 backdrop-blur-md rounded-lg animate-fade-in">
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <button
