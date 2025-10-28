@@ -1,4 +1,4 @@
-import { Linkedin, Github, Mail, Twitter } from "lucide-react";
+import { Linkedin, Github, Mail, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { 
@@ -195,9 +195,9 @@ const Hero = () => {
                 className="shadow-lg hover:shadow-xl transition-all hover-scale group"
                 asChild
               >
-                <a href="#" aria-label="Follow on Twitter">
-                  <Twitter className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" aria-hidden="true" />
-                  Twitter
+                <a href="mailto:your-email@example.com" aria-label="Send an email">
+                  <Mail className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" aria-hidden="true" />
+                  Email
                 </a>
               </Button>
               <Button 
@@ -206,9 +206,9 @@ const Hero = () => {
                 className="shadow-lg hover:shadow-xl transition-all hover-scale group"
                 asChild
               >
-                <a href="mailto:your-email@example.com" aria-label="Send an email">
-                  <Mail className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" aria-hidden="true" />
-                  Email
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download resume">
+                  <FileText className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" aria-hidden="true" />
+                  Resume
                 </a>
               </Button>
             </div>
