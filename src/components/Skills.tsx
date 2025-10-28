@@ -93,9 +93,9 @@ const Skills = () => {
   return (
     <section id="skills" className="py-12 bg-muted/30" ref={ref as any} aria-labelledby="skills-heading">
       <div className="container mx-auto px-4">
-        <h3 id="skills-heading" className={`text-3xl font-bold mb-8 transition-all duration-700 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
+        <h2 id="skills-heading" className={`text-3xl font-bold mb-8 transition-all duration-700 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
           Technical Skills
-        </h3>
+        </h2>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, index) => {

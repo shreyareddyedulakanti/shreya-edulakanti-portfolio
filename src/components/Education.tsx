@@ -20,7 +20,7 @@ const Education = () => {
   return (
     <section id="education" className="py-12 bg-muted/30" aria-labelledby="education-heading">
       <div className="container mx-auto px-4">
-        <h3 id="education-heading" className="text-3xl font-bold mb-8">Education</h3>
+        <h2 id="education-heading" className="text-3xl font-bold mb-8">Education</h2>
         
         <div className="grid md:grid-cols-2 gap-6">
           {education.map((edu, index) => (

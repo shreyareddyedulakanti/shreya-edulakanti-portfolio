@@ -32,9 +32,9 @@ const Projects = () => {
   return (
     <section id="projects" className="py-12" ref={ref as any} aria-labelledby="projects-heading">
       <div className="container mx-auto px-4">
-        <h3 id="projects-heading" className={`text-3xl font-bold mb-8 transition-all duration-700 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
+        <h2 id="projects-heading" className={`text-3xl font-bold mb-8 transition-all duration-700 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
           Featured Projects
-        </h3>
+        </h2>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
