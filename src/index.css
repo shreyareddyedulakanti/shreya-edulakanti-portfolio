@@ -37,12 +37,18 @@ All colors MUST be HSL.
     --ring: 221 83% 53%;
 
     --radius: 0.5rem;
-    
-    --gradient-hero: linear-gradient(135deg, hsl(221 83% 53%), hsl(221 70% 65%));
-    --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    --shadow-hover: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(221 83% 53%),
+      hsl(221 70% 65%)
+    );
+    --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+      0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    
+
     --hero-accent: 222 47% 11%;
 
     --sidebar-background: 0 0% 98%;
@@ -83,13 +89,19 @@ All colors MUST be HSL.
     --border: 217 33% 24%;
     --input: 217 33% 24%;
     --ring: 217 91% 60%;
-    
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%), hsl(221 83% 53%));
-    --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.5), 0 1px 2px 0 rgba(0, 0, 0, 0.4);
-    --shadow-hover: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
-    
+
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(217 91% 60%),
+      hsl(221 83% 53%)
+    );
+    --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.5),
+      0 1px 2px 0 rgba(0, 0, 0, 0.4);
+    --shadow-hover: 0 4px 6px -1px rgba(0, 0, 0, 0.5),
+      0 2px 4px -1px rgba(0, 0, 0, 0.4);
+
     --hero-accent: 210 40% 98%;
-    
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -106,38 +118,38 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-body {
-  @apply bg-background text-foreground;
-}
+  body {
+    @apply bg-background text-foreground;
+  }
 
-html {
-  scroll-behavior: smooth;
-}
+  html {
+    scroll-behavior: smooth;
+  }
 
-/* Screen reader only class */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
+  /* Screen reader only class */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
 
-/* Focus visible styles for keyboard navigation */
-.focus\:not-sr-only:focus {
-  position: static;
-  width: auto;
-  height: auto;
-  padding: inherit;
-  margin: inherit;
-  overflow: visible;
-  clip: auto;
-  white-space: normal;
-}
+  /* Focus visible styles for keyboard navigation */
+  .focus\:not-sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
 }
 
 @layer utilities {
