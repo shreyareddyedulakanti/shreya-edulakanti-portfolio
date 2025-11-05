@@ -101,7 +101,7 @@ const Experience = () => {
                         {exp.title}
                       </h3>
                     </div>
-                    <p className="text-lg font-medium text-primary">
+                    <p className="text-lg font-medium text-foreground">
                       {exp.company}
                     </p>
                     <p className="text-sm text-muted-foreground">

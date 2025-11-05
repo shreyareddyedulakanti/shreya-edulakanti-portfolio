@@ -30,7 +30,7 @@ const Education = () => {
                   <GraduationCap className="w-6 h-6 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
                   <div>
                     <h3 id={`education-degree-${index}`} className="font-semibold text-lg leading-tight mb-2">{edu.degree}</h3>
-                    <p className="font-medium text-primary mb-2">{edu.school}</p>
+                    <p className="font-medium text-foreground mb-2">{edu.school}</p>
                     <div className="flex flex-col gap-1 text-sm text-muted-foreground">
                       <div className="flex items-center gap-1">
                         <MapPin className="w-3 h-3" aria-hidden="true" />
