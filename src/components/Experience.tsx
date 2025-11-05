@@ -104,11 +104,11 @@ const Experience = () => {
                     <p className="text-lg font-medium text-foreground">
                       {exp.company}
                     </p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-foreground/70">
                       {exp.location}
                     </p>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground mt-2 md:mt-0">
+                  <div className="flex items-center gap-2 text-sm text-foreground/70 mt-2 md:mt-0">
                     <Calendar className="w-4 h-4" aria-hidden="true" />
                     <time dateTime={exp.period}>{exp.period}</time>
                   </div>
@@ -119,7 +119,7 @@ const Experience = () => {
                   aria-label={`Key achievements at ${exp.company}`}
                 >
                   {exp.highlights.map((highlight, idx) => (
-                    <li key={idx} className="text-muted-foreground flex gap-2">
+                    <li key={idx} className="text-foreground/80 flex gap-2">
                       <span className="text-primary mt-1.5">•</span>
                       <span>{highlight}</span>
                     </li>

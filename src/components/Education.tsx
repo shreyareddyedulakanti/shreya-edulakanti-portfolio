@@ -31,7 +31,7 @@ const Education = () => {
                   <div>
                     <h3 id={`education-degree-${index}`} className="font-semibold text-lg leading-tight mb-2">{edu.degree}</h3>
                     <p className="font-medium text-foreground mb-2">{edu.school}</p>
-                    <div className="flex flex-col gap-1 text-sm text-muted-foreground">
+                    <div className="flex flex-col gap-1 text-sm text-foreground/70">
                       <div className="flex items-center gap-1">
                         <MapPin className="w-3 h-3" aria-hidden="true" />
                         <span>{edu.location}</span>
