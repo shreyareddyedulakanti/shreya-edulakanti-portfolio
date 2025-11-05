@@ -8,10 +8,7 @@ const About = () => {
           <CardContent className="pt-6">
             <h2 id="about-heading" className="text-2xl font-bold mb-4">About Me</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Full Stack Web Developer with 5+ years of experience delivering scalable web applications using Angular and React. 
-              Skilled in optimizing performance (25% faster load times), leading cross-functional teams, and deploying 
-              cloud-native solutions with Docker, AWS, databases, and CI/CD pipelines. Passionate about creating 
-              high-quality, accessible web experiences that drive business value.
+              I'm a software engineer with 7+ years building scalable solutions across web, cloud, and AI—with equal focus on exceptional user experience and business value. I specialize in optimizing performance (achieving 25% faster load times), creating accessible interfaces, and deploying cloud-native solutions. My toolkit includes Angular, React, Node.js, Java, and Spring Boot, backed by Docker, AWS, and CI/CD pipelines. I thrive in collaborative environments where we challenge ideas and learn from each other. I stay current through workshops and tech talks, and I'm particularly excited about leveraging AI-powered tools to accelerate development and explore new possibilities. Outside of code, I recharge through travel, trying new things, and exploring different cultures. These experiences refresh my mind and bring the fresh thinking that drives better solutions.
             </p>
           </CardContent>
         </Card>
