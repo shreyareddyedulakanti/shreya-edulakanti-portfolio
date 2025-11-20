@@ -23,6 +23,13 @@ const projects = [
     skills: ["Spring Boot", "Angular", "Oracle SQL", "AWS", "Maven"],
     githubUrl: "",
     projectUrl: ""
+  },
+  {
+    title: "Blog web application",
+    description: "Full-stack blogging platform built with Node.js and Express.js enabling users to create and view posts with responsive user experience.",
+    skills: ["Node", "Express", "EJS", "Bootstrap", "Responsive Design"],
+    githubUrl: "https://github.com/shreyareddyedulakanti/blog-web-applicaion",
+    projectUrl: "https://blog-web-application-8lzt.onrender.com/"
   }
 ];
 
