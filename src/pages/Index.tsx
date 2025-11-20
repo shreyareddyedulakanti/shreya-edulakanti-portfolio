@@ -20,8 +20,7 @@ const Index = () => {
       <footer className="bg-card border-t py-8 mt-12" role="contentinfo">
         <div className="container mx-auto px-4 text-center text-muted-foreground">
           <p>
-            © {new Date().getFullYear()} Shreya Edulakanti Portfolio. Built with
-            React & TypeScript.
+            © {new Date().getFullYear()} Shreya Edulakanti Portfolio.
           </p>
         </div>
       </footer>
