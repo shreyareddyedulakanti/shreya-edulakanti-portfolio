@@ -201,7 +201,7 @@ const Hero = () => {
                 className="shadow-lg hover:shadow-xl transition-all hover-scale group"
                 asChild
               >
-                <a href="https://www.linkedin.com/in/shreya-edulakanti/" aria-label="Connect on LinkedIn">
+                <a href="https://www.linkedin.com/in/shreya-edulakanti/" aria-label="Connect on LinkedIn"target="_blank">
                   <Linkedin
                     className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform"
                     aria-hidden="true"
@@ -215,7 +215,7 @@ const Hero = () => {
                 className="shadow-lg hover:shadow-xl transition-all hover-scale group"
                 asChild
               >
-                <a href="https://github.com/shreyareddyedulakanti/" aria-label="View GitHub profile">
+                <a href="https://github.com/shreyareddyedulakanti/" aria-label="View GitHub profile" target="_blank">
                   <Github
                     className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform"
                     aria-hidden="true"
@@ -231,6 +231,7 @@ const Hero = () => {
               >
                 <a
                   href="mailto:edulakanti.shreya25@gmail.com"
+                  target="_blank"
                   aria-label="Send an email"
                 >
                   <Mail
